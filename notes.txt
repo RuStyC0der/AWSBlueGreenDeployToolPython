@@ -1,0 +1,49 @@
+drive backup
+    check if the 'RootDeviceType': 'ebs'
+
+ec2 required tags
+    "ImageId": "ami-03d5c68bab01f3496"
+    "InstanceId": "i-01c02664fbcb71a4c",
+    "InstanceType": "t2.micro",
+    "PublicIpAddress": "35.80.157.204",    
+    "SubnetId": "subnet-8c58cef4",
+    "VpcId": "vpc-54b8bd2c"
+    "BlockDeviceMappings": [
+                        {
+                        "DeviceName": "/dev/sda1",
+                        "Ebs": {
+                            "DeleteOnTermination": True,
+                            "Status": "attached",
+                            "VolumeId": "vol-0b564168daf6c9c99"
+                        }
+    "Association": {
+        "PublicDnsName": "ec2-35-80-157-204.us-west-2.compute.amazonaws.com",
+        "PublicIp": "35.80.157.204"
+    }
+    "Tags": [
+    {
+        "Key": "Name",
+        "Value": "server"
+    }
+    ]
+    "SecurityGroups": [
+    {
+        "GroupName": "launch-wizard-1",
+        "GroupId": "sg-0dbe5651a153a1380"
+    }
+    ],
+    
+volume copy
+    base done 
+
+tags copy on another instance
+    base done 
+    error handling
+
+expected functions:
+    blue/green deployment
+    create light instance with volume copy
+    create copy of instance with empty volume
+    create full copy of instance
+    volume copy
+    tags copy on another instance
